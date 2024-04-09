@@ -1,4 +1,4 @@
-package fr.hetic;
+package fr.patrik;
 
 public class Calculateur {
     public static void main(String[] args) {
@@ -20,6 +20,7 @@ public class Calculateur {
                 default:
                     System.out.println("L'opération n'est pas supportée");
             }
+
         } catch(Exception e) {
             System.out.println("L'opération est incorrecte");
         }
