@@ -38,13 +38,16 @@ public class CalculateurFichier {
 
                         switch (operator) {
                             case "+":
-                                line = String.valueOf(leftNumber + rightNumber);
+                                Operation operationAdd = new OperationAdd();
+                                line = String.valueOf(operationAdd.doOperation(leftNumber, rightNumber));
                                 break;
                             case "-":
-                                line = String.valueOf(leftNumber - rightNumber);
+                                Operation operationSubstract = new OperationSubstract();
+                                line = String.valueOf(operationSubstract.doOperation(leftNumber, rightNumber));
                                 break;
                             case "*":
-                                line = String.valueOf(leftNumber * rightNumber);
+                                Operation operationMultiply = new OperationMultiply();
+                                line = String.valueOf(operationMultiply.doOperation(leftNumber, rightNumber));
                                 break;
                             default:
                                 System.out.println("L'opération n'est pas supportée");
