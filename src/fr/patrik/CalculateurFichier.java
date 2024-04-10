@@ -4,14 +4,19 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.io.FilenameFilter;
 
 public class CalculateurFichier {
     public static void main(String[] args) {
         File directory = new File(args[0]); //args[0] correspond au chemin absolu du dossier
-        String[] flist = directory.list();
+        File[] flist = directory.listFiles(new FilenameFilter() {
+            public boolean accept(File directory, String name) {
+                return name.toLowerCase().endsWith(".op");
+            }
+        });
 
-        for (int i = 0; i < flist.length; i++) { 
-            String filename = flist[i];
+        for (int i = 0; i < flist.length; i++) {
+            String filename = flist[i].getName();
             File opFile = new File(directory, filename);
             File resFile = new File(directory, filename.substring(0, filename.length()-3)+".res");
 
@@ -21,14 +26,15 @@ public class CalculateurFichier {
 
                 while (readerOp.hasNextLine()) {
                     String data = readerOp.nextLine();
-                    char firstNumber = data.charAt(0);
-                    char secondNumber = data.charAt(2);
-                    String operator = Character.toString(data.charAt(4));
+                    String[] characters = data.split(" ");
+                    String firstNumber = characters[0];
+                    String secondNumber = characters[1];
+                    String operator = characters[2];
                     String line = "";
 
                     try {
-                        int leftNumber = Integer.parseInt(String.valueOf(firstNumber));
-                        int rightNumber = Integer.parseInt(String.valueOf(secondNumber));
+                        int leftNumber = Integer.parseInt(firstNumber);
+                        int rightNumber = Integer.parseInt(secondNumber);
 
                         switch (operator) {
                             case "+":
