@@ -3,7 +3,7 @@ package fr.patrik;
 public class OperationContext {
    private Operation operation;
 
-   public Context(Operation operation){
+   public void Context(Operation operation){
       this.operation = operation;
    }
 

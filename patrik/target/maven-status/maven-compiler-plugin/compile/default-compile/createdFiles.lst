@@ -1,1 +1,7 @@
+fr\patrik\Operation.class
+fr\patrik\Calculateur.class
+fr\patrik\OperationAdd.class
+fr\patrik\OperationMultiply.class
+fr\patrik\OperationSubstract.class
 fr\patrik\App.class
+fr\patrik\OperationContext.class
