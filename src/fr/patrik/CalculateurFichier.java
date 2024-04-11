@@ -9,11 +9,9 @@ import java.io.FilenameFilter;
 public class CalculateurFichier {
     public static void main(String[] args) {
         File directory = new File(args[0]); //args[0] correspond au chemin absolu du dossier
-        File[] flist = directory.listFiles(new FilenameFilter() {
-            public boolean accept(File directory, String name) {
-                return name.toLowerCase().endsWith(".op");
-            }
-        });
+        File[] flist = directory.listFiles(
+            file -> file.getName().toLowerCase().endsWith(".op") 
+        );
 
         for (int i = 0; i < flist.length; i++) {
             String filename = flist[i].getName();
