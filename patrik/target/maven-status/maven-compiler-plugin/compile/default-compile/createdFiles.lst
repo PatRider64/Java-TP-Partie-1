@@ -1,4 +1,7 @@
+fr\patrik\Reader.class
+fr\patrik\FileSystemReader.class
 fr\patrik\Operation.class
+fr\patrik\JdbcReader.class
 fr\patrik\Calculateur.class
 fr\patrik\OperationAdd.class
 fr\patrik\OperationMultiply.class
