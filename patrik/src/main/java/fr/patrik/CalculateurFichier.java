@@ -19,7 +19,10 @@ public class CalculateurFichier {
             fileReader.read(path);
         } else if (method.equals("jdbc")) {
             JdbcReader jdbcReader = reader.getJdbcReader();
-            jdbcReader.read(path);
+            String url = reader.getUrl();
+            String username = reader.getUsername();
+            String password = reader.getPassword();
+            jdbcReader.read(path, url, username, password);
         }
     }
 }
