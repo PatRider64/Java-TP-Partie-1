@@ -1,11 +1,11 @@
 fr\patrik\Reader.class
 fr\patrik\FileSystemReader.class
 fr\patrik\Operation.class
+fr\patrik\OperationAdd.class
+fr\patrik\OperationSubstract.class
 fr\patrik\JdbcReader.class
 fr\patrik\Calculateur.class
-fr\patrik\OperationAdd.class
 fr\patrik\OperationMultiply.class
-fr\patrik\OperationSubstract.class
 fr\patrik\App.class
 fr\patrik\OperationContext.class
 fr\patrik\CalculateurFichier.class

@@ -10,11 +10,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class JdbcReader {
-    public void read(String path) throws SQLException {
+    public void read(String path, String url, String username, String password) throws SQLException {
         File directory = new File(path);
 
-        try (Connection con = DriverManager
-          .getConnection("jdbc:postgresql://SG-hetic-mt4-java-5275-pgsql-master.servers.mongodirector.com:5432/TP", "etudiant", "MT4@hetic2324")) {
+        try (Connection con = DriverManager.getConnection(url, username, password)) {
             try (Statement stmt = con.createStatement()) {
                 String selectFiles = "SELECT * FROM fichier f INNER JOIN ligne l on (f.id = l.fichier_id) WHERE f.type = 'OP' order by nom, position";
                 try (ResultSet files = stmt.executeQuery(selectFiles)) {
